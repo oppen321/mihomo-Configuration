@@ -17,6 +17,11 @@ bash install.sh
 curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/sing-box.sh -o sing-box.sh
 ```
 
+- 安装sing-box
+```sh
+bash sing-box.sh
+```
+
 - 下载订阅转换脚本
 ```sh
 curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh -o update_mihimo.sh
