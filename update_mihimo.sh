@@ -4,11 +4,28 @@
 read -p "请输入你的订阅链接: " SUBSCRIPTION_URL
 
 # 配置文件路径
-CONFIG_FILE="/etc/mihimo/config.yaml"
+CONFIG_FILE="/etc/mihomo/config.yaml"
 
-# 使用订阅链接转换为Clash的YAML文件
+# 创建必要的目录
+if [ ! -d "/etc/mihomo" ]; then
+  mkdir -p "/etc/mihomo"
+fi
+
+# 生成订阅链接转换后的URL
 CONVERTED_URL="https://id9.cc/sub?target=clash&url=${SUBSCRIPTION_URL}&insert=false&emoji=false&list=false&udp=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
-curl -s "$CONVERTED_URL" -o "/tmp/clash.yaml"
+
+# 下载转换后的配置文件到临时文件
+TEMP_FILE="/tmp/clash.yaml"
+curl -s -o "$TEMP_FILE" "$CONVERTED_URL"
+
+# 检查是否下载成功
+if [ ! -f "$TEMP_FILE" ]; then
+  echo "无法下载订阅链接转换后的配置文件。"
+  exit 1
+fi
+
+# 提取 'proxies:' 之后的内容
+PROXIES_CONTENT=$(awk '/^proxies:/ {flag=1; next} flag' "$TEMP_FILE")
 
 # 预设配置
 PRESET_CONFIG="allow-lan: true
@@ -63,18 +80,14 @@ dns:
   fallback-filter:
     geoip: true
     geoip-code: CN"
+proxies:
 
-# 找到proxies:所在的行号
-PROXIES_LINE=$(grep -n '^proxies:' /tmp/clash.yaml | cut -d: -f1)
-
-# 提取proxies:及其后面的内容
-tail -n +"$PROXIES_LINE" /tmp/clash.yaml > /tmp/clash_proxies.yaml
-
-# 生成最终的配置文件
+# 生成最终的配置文件，将预设配置写入
 echo "$PRESET_CONFIG" > "$CONFIG_FILE"
-cat /tmp/clash_proxies.yaml >> "$CONFIG_FILE"
+# 将 'proxies:' 之后的内容追加到配置文件中
+echo "$PROXIES_CONTENT" >> "$CONFIG_FILE"
 
-# 清理临时文件
-rm -f /tmp/clash.yaml /tmp/clash_proxies.yaml
+# 删除临时文件
+rm -f "$TEMP_FILE"
 
 echo "Config.yaml 已更新并保存到 $CONFIG_FILE"
