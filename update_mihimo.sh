@@ -6,8 +6,9 @@ read -p "请输入你的订阅链接: " SUBSCRIPTION_URL
 # 配置文件路径
 CONFIG_FILE="/etc/mihimo/config.yaml"
 
-# 下载并转换订阅链接为Clash的YAML文件
-curl -s "$SUBSCRIPTION_URL" -o "/tmp/clash.yaml"
+# 使用订阅链接转换为Clash的YAML文件
+CONVERTED_URL="https://suburl.v1.mk/sub?target=clash&url=${SUBSCRIPTION_URL}&insert=false&emoji=false&list=false&udp=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+curl -s "$CONVERTED_URL" -o "/tmp/clash.yaml"
 
 # 预设配置
 PRESET_CONFIG="allow-lan: true
