@@ -111,7 +111,7 @@ if [ ! -d "/etc/mihomo" ]; then
 fi
 
 # 生成订阅链接转换后的URL
-CONVERTED_URL="https://id9.cc/sub?target=clash&url=${SUBSCRIPTION_URL}&insert=false&emoji=true&list=false&udp=true&tfo=false&scv=true&fdn=false&sort=false&new_name=true"
+CONVERTED_URL="https://sub.789.st/sub?target=clash&url=${SUBSCRIPTION_URL}&insert=false&emoji=true&list=false&udp=true&tfo=false&scv=true&fdn=false&sort=false&new_name=true"
 
 # 下载转换后的配置文件到临时文件
 TEMP_FILE="/tmp/clash.yaml"
