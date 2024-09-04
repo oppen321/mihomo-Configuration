@@ -45,7 +45,7 @@ ARCH=$(dpkg --print-architecture)
 echo "检测到设备架构为: $ARCH"
 
 # 获取最新的发行版，并根据架构下载对应的deb文件
-LATEST_RELEASE=$(curl -s https://mirror.ghproxy.com/https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "tag_name" | awk '{print $2}' | tr -d '",')
+LATEST_RELEASE=$(curl -s https://mirror.ghproxy.com/https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/mihomo.api | grep "tag_name" | awk '{print $2}' | tr -d '",')
 
 # 检查是否成功获取版本号
 if [ -z "$LATEST_RELEASE" ]; then
