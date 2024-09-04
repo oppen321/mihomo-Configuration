@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/bash' >${GITHUB_ENV}
+sudo chmod +x ${GITHUB_ENV}
 
 # 提示用户输入订阅链接
 read -p "请输入你的订阅链接: " SUBSCRIPTION_URL
