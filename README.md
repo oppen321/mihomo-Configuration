@@ -6,7 +6,7 @@
 ```sh
 curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/install.sh -o install.sh
 ```
--安装mihomo
+- 安装mihomo
 ```sh
 bash install.sh
 ```
