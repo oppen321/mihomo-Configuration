@@ -14,15 +14,18 @@ if [ -z "$LATEST_RELEASE" ]; then
   exit 1
 fi
 
-echo "最新版本为: $LATEST_RELEASE"
+# 去掉版本号中的前缀“v”
+VERSION_NUMBER=${LATEST_RELEASE#v}
+
+echo "最新版本为: $VERSION_NUMBER"
 
 # 根据架构选择对应的deb文件下载链接
 case "$ARCH" in
   amd64)
-    DEB_URL="https://github.com/SagerNet/sing-box/releases/tag/$LATEST_RELEASE/sing-box_${LATEST_RELEASE}_linux_amd64.deb"
+    DEB_URL="https://github.com/SagerNet/sing-box/releases/download/$LATEST_RELEASE/sing-box_${VERSION_NUMBER}_linux_amd64.deb"
     ;;
   arm64)
-    DEB_URL="https://github.com/SagerNet/sing-box/releases/tag/$LATEST_RELEASE/sing-box_${LATEST_RELEASE}_linux_arm64.deb"
+    DEB_URL="https://github.com/SagerNet/sing-box/releases/download/$LATEST_RELEASE/sing-box_${VERSION_NUMBER}_linux_arm64.deb"
     ;;
   *)
     echo "未支持的架构: $ARCH"
