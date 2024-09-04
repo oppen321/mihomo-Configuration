@@ -1,4 +1,4 @@
 - 命令行安装
 ```sh
-bash <(curl -fsSL https://github.com/oppen321/ubuntu-build/raw/main/local.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh)
 ```
