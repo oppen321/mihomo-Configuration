@@ -190,3 +190,25 @@ echo "$PROXIES_CONTENT" >> "$CONFIG_FILE"
 rm -f "$TEMP_FILE"
 
 echo "Config.yaml 已更新并保存到 $CONFIG_FILE"
+
+# 6. 下载 Yacd-meta 仪表盘并解压到 /etc/mihomo/ui
+UI_URL="https://mirror.ghproxy.com/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip"
+UI_DIR="/etc/mihomo/ui"
+
+echo "正在下载 Yacd-meta 仪表盘..."
+curl -L -o /tmp/yacd-meta.zip "$UI_URL"
+
+echo "解压仪表盘..."
+unzip -o /tmp/yacd-meta.zip -d /tmp/
+
+# 移动到 /etc/mihomo/ui 并赋予权限
+sudo mv /tmp/Yacd-meta-gh-pages "$UI_DIR"
+sudo chmod -R 755 "$UI_DIR"
+
+# 删除临时文件
+rm -f /tmp/yacd-meta.zip
+
+echo "Yacd-meta 仪表盘已安装至 $UI_DIR。"
+
+# 提示用户完成
+echo "安装和配置已完成！您可以通过访问 http://<设备IP> 来访问 Web 面板。"
