@@ -3,7 +3,7 @@
 
 - 下载脚本
 ```sh
-curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh-o update_mihimo.sh
+curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh -o update_mihimo.sh
 ```
 - 启动脚本
 ```sh
