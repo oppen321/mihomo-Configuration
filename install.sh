@@ -18,16 +18,16 @@ echo "最新版本为: $LATEST_RELEASE"
 # 根据架构选择对应的deb文件
 case "$ARCH" in
   amd64)
-    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo_${LATEST_RELEASE}_amd64.deb"
+    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo-${LATEST_RELEASE}-amd64.deb"
     ;;
   arm64)
-    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo_${LATEST_RELEASE}_arm64.deb"
+    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo-${LATEST_RELEASE}-arm64.deb"
     ;;
   armhf)
-    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo_${LATEST_RELEASE}_armhf.deb"
+    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo-${LATEST_RELEASE}-armhf.deb"
     ;;
   i386)
-    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo_${LATEST_RELEASE}_i386.deb"
+    DEB_URL="https://github.com/MetaCubeX/mihomo/releases/download/$LATEST_RELEASE/mihomo-${LATEST_RELEASE}-i386.deb"
     ;;
   *)
     echo "未支持的架构: $ARCH"
