@@ -1,6 +1,6 @@
 # 个人自用mihomo自动更新订阅脚本
--自用下载对应内核的mihomo
--自动更新etc/mihomo/config.yaml文件
+- 自用下载对应内核的mihomo
+- 自动更新etc/mihomo/config.yaml文件
 
 下载mihomo脚本
 ```sh
