@@ -22,12 +22,22 @@ curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main
 bash sing-box.sh
 ```
 
-- 下载订阅转换脚本
+-sing-box下载订阅转换脚本
+```sh
+curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_sing-box.sh -o update_sing-box.sh
+```
+
+- sing-box启动订阅转换脚本
+```sh
+bash update_mihimo.sh
+```
+
+- mihomo下载订阅转换脚本
 ```sh
 curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh -o update_mihimo.sh
 ```
 
-- 启动订阅转换脚本
+- mihomo启动订阅转换脚本
 ```sh
 bash update_mihimo.sh
 ```
