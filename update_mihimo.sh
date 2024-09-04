@@ -79,8 +79,8 @@ dns:
     - https://dns.google/dns-query
   fallback-filter:
     geoip: true
-    geoip-code: CN"
-proxies:
+    geoip-code: CN
+proxies:"
 
 # 生成最终的配置文件，将预设配置写入
 echo "$PRESET_CONFIG" > "$CONFIG_FILE"
