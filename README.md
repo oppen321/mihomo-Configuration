@@ -6,6 +6,6 @@
 bash <(curl -fsSL https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/update_mihimo.sh)
 ```
 - 测试脚本
-- ```sh
+```sh
 bash <(curl -fsSL https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/test.sh）
 ```
