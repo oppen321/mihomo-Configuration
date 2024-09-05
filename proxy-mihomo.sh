@@ -139,9 +139,9 @@ geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
-  geoip: \"https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat\"
-  geosite: \"https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat\"
-  mmdb: \"https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.metadb\"
+  geoip: \"https://mirror.ghproxy.com/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/202409042211/geoip.dat\"
+  geosite: \"https://mirror.ghproxy.com/https://github.com/Loyalsoldier/v2ray-rules-dat/releases/download/202409042211/geosite.dat\"
+  mmdb: \"https://mirror.ghproxy.com/https://raw.githubusercontent.com/Max-Sum/17mon-mmdb/release/Country.mmdb\"
 tun:
   enable: true
   stack: system
