@@ -42,7 +42,7 @@ curl -fsSL  https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main
 bash update_mihimo.sh
 ```
 
--国内mihomo一键配置
+- 国内mihomo一键配置
 ```sh
 curl -fsSL  https://mirror.ghproxy.com/https://raw.githubusercontent.com/oppen321/mihomo-Configuration/main/proxy-mihomo.sh -o proxy-mihomo.sh
 ```
